@@ -8,10 +8,8 @@ import {
   
   export const newUserRegistration = (formData) => async (dispatch) => {
     try {
-      //dispatch(registrationPending());
   
       const result = await userRegistration(formData);
-         console.log(result);
       result.status === "success"
         ? dispatch(registrationSuccess(result.message))
         : dispatch(registrationError(result.message));
