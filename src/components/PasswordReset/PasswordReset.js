@@ -4,11 +4,9 @@ import "./PasswordReset.css"
 import { useDispatch, useSelector } from 'react-redux'
 import {sendPasswordResetOtp} from "./passwordAction"
 import { Alert } from "react-bootstrap"
-import {useHistory } from 'react-router-dom'
 
 function PasswordReset() {
   const dispatch = useDispatch()
-  const history = useHistory()
   const [email, setEmail] = useState("")
   const {status, message} = useSelector(state => state.password)
 

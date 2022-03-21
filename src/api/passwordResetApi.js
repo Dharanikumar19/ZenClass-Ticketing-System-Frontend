@@ -4,8 +4,7 @@ import axios from "axios";
 export const requestPasswordOtp = (email) => {
 	return new Promise(async (resolve, reject) => {
 		try {
-			const { data } = await axios.post("https://zen-class-ticketing-system.herokuapp.com/user/resetPassword", { email });
-			console.log(data);
+			const { data } = await axios.post("https://zen-class-ticketing-system.herokuapp.com/user/resetPassword", { email })
 			resolve(data);
 		} catch (error) {
 			reject(error);

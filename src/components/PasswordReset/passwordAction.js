@@ -6,7 +6,7 @@ import {
 } from "./passwordSlice";
 import { requestPasswordOtp, updateUserPassword } from "../../api/passwordResetApi";
 
-export const sendPasswordResetOtp = email => async dispatch => {
+export const sendPasswordResetOtp = (email) => async (dispatch) => {
     try {
         dispatch(otpReqPending());
 
