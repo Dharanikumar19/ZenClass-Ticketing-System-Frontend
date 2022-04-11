@@ -10,13 +10,18 @@ import {getUserProfile} from "../../pages/Dashboard/userAction";
 
 function Login() {
   
-  const [email, setEmail] = useState("mentor@gmail.com")
-  const [password, setPassword] = useState("mentor123")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
   const dispatch = useDispatch()
   const history = useHistory()
 
   const {isLoading, error} = useSelector(state => state.login)
+
+  const fillAdminInputs = () => {
+    setEmail("mentor@gmail.com")
+    setPassword("mentor123")
+  }
 
   useEffect(() =>{
     sessionStorage.getItem("access_token") && 
@@ -94,6 +99,9 @@ function Login() {
                   </div>
 
                 </form>
+                <div className="d-grid mb-2 mt-3">
+                    <button className="btn btn-md mt-2 btn-primary btn-login text-uppercase" onClick={() => fillAdminInputs()}>Demo Credentials</button>
+                  </div>
               </div>
             </div>
           </div>

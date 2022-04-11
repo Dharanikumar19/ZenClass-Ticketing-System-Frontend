@@ -23,6 +23,10 @@ function Login() {
     history.push("/dashboard")
   },[ history])
 
+  const fillUserInputs = () => {
+    setEmail("person2@gmail.com")
+    setPassword("person02")
+  }
 
   const handleOnChange = e => {
     const {name, value} = e.target
@@ -98,6 +102,10 @@ function Login() {
                   <p className="d-block text-center mt-4 medium">Don't have an account ?<Link to="/register"> Register Now</Link></p>
 
                 </form>
+
+                <div className="d-grid mb-2">
+                    <button className="btn btn-md mt-2 btn-primary btn-login text-uppercase" onClick={() => fillUserInputs()}>Demo Credentials</button>
+                  </div>
               </div>
             </div>
           </div>
